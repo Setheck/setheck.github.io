@@ -13,10 +13,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      pages: write
+      id-token: write
+      contents: read
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     
